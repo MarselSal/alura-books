@@ -1,4 +1,5 @@
 import Header from './components/Header';
+import Pesquisa from './components/Pesquisa';
 import styled from 'styled-components';
 
 // utlizando o styledComponents para nao precisar do arquivo css
@@ -12,6 +13,7 @@ function App() {
   return (
     <AppContainer>
         <Header/>
+        <Pesquisa />
     </AppContainer>
   );
 }
