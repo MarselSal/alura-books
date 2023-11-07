@@ -1,4 +1,7 @@
-import { livros } from './dadosUltimosLancamentos'
+import { livros } from './dadosUltimosLancamentos';
+import { Titulo } from '../Titulo';
+import CardRecomenda from '../CardRecomenda';
+import imagemLivro from '../../images/livro2.png';
 import styled from 'styled-components';
 
 const UltimosLancamentosContainer = styled.section`
@@ -6,16 +9,6 @@ const UltimosLancamentosContainer = styled.section`
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;
-`
-
-const Titulo = styled.h2`
-    width: 100%;
-    padding: 30px 0;
-    background-color: #FFF;
-    color: #EB9B00;
-    font-size: 36px;
-    text-align: center;
-    margin: 0;
 `
 
 const NovosLivrosContainer = styled.div`
@@ -29,12 +22,22 @@ const NovosLivrosContainer = styled.div`
 function UltimosLancamentos() {
     return (
         <UltimosLancamentosContainer>
-            <Titulo>Ultimos Lancamentos</Titulo>
+            {/* utilizando de props */}
+            <Titulo 
+                cor='#EB9B00'
+                tamanhoFonte='56px'
+            >Últimos Lançamentos</Titulo>
             <NovosLivrosContainer>
                 { livros.map( livro => (
                     <img src={livro.src} />
                 )) }
             </NovosLivrosContainer>
+            <CardRecomenda 
+                titulo="Talvez você se interesse por"
+                subtitulo="Angular 11"
+                descricao="Construindo uma aplicação com a plataforma Google"
+                img={imagemLivro}
+            />
         </UltimosLancamentosContainer>
     )
 }
